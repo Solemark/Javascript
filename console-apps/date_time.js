@@ -40,4 +40,4 @@ const checkDay = (day) => {
     return output
 }
 
-module.exports = { checkTime }
+module.exports = { checkTime, getCurrentTime, checkDay }
