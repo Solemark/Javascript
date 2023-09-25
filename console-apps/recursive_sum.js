@@ -1,3 +1,9 @@
+/**
+ * sum numbers recursively
+ * @param {number} n 
+ * @param {number} result 
+ * @returns {number}
+ */
 const sum = (n, result) => {
     if (n <= 0) {
         return result
@@ -7,6 +13,13 @@ const sum = (n, result) => {
     }
 }
 
+/**
+ * sum an array of numbers
+ * @param {number[]} arr 
+ * @param {number} n 
+ * @param {number} result 
+ * @returns {number}
+ */
 const sumArray = (arr, n, result) => {
     if (n < 0) {
         return result

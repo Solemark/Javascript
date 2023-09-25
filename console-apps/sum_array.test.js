@@ -1,5 +1,9 @@
 const { sumArray } = require('./sum_array')
 
+/**
+ * data provider for tests
+ * @returns {[[number[]], number[]]}
+ */
 const getData = () => [
     [
         [1, 2, 3, 4, 5],

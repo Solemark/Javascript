@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param {number} a 
+ * @param {number} max 
+ * @returns {string[]}
+ */
 const outputTable = (a, max) => {
     let b = 0
     const arr = []

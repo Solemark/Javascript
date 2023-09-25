@@ -1,5 +1,9 @@
 const { outputTable } = require('./multiplication_tables')
 
+/**
+ * data provider for tests
+ * @returns {[number[], [string[]]]}
+ */
 const getData = () => [
     [1, 5, 9, 10, 12],
     [

@@ -1,3 +1,10 @@
+/**
+ * play's a game of fizzbuzz
+ * @param {number} max 
+ * @param {number} fizz 
+ * @param {number} buzz 
+ * @returns {string}
+ */
 const fizzBuzz = (max, fizz, buzz) => {
     let output = ''
     for (let i = 1; i <= max; i++) {

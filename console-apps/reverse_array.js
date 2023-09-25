@@ -1,3 +1,8 @@
+/**
+ * reverse an array using another array
+ * @param {any[]} a1 
+ * @returns {any[]}
+ */
 const reverseArray = (a1) => {
     const a2 = []
     let c = a1.length - 1
@@ -8,6 +13,11 @@ const reverseArray = (a1) => {
     return a2
 }
 
+/**
+ * reverse a single array
+ * @param {any[]} a1 
+ * @returns {any[]}
+ */
 const reverseSingleArray = (a1) => {
     let c = a1.length - 1
     let x = 0

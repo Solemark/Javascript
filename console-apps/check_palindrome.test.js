@@ -1,5 +1,9 @@
 const { checkPalindrome } = require("./check_palindrome")
 
+/**
+ * data provider for tests
+ * @returns {[string[], bool[]]}
+ */
 const getData = () => [
     ['DAD', 'Dad', 'ABCDCBA', 'ABCDcba'],
     [true, false, true, false],

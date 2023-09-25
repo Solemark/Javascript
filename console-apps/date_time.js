@@ -1,3 +1,7 @@
+/**
+ * get the current date and time
+ * @returns {string}
+ */
 const checkTime = () => {
     const date = new Date()
     let output = ''
@@ -8,6 +12,11 @@ const checkTime = () => {
     return output
 }
 
+/**
+ * get the current time (hours and minutes)
+ * @param {Date} date 
+ * @returns {string}
+ */
 const getCurrentTime = (date) => {
     let output = ''
     if (date.getHours() > 12) {
@@ -19,6 +28,11 @@ const getCurrentTime = (date) => {
     return output
 }
 
+/**
+ * get the current day as a string
+ * @param {number} day 
+ * @returns {string}
+ */
 const checkDay = (day) => {
     let output = ''
     switch (day) {

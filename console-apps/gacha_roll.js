@@ -1,9 +1,15 @@
+/**
+ * roll until you get a high rarity character in the chosen game
+ * @param {string} game 
+ * @returns {string}
+ */
 const gachaRoll = (game) => {
     let rollCount = 0
     let c = 0
     let chance = 0
     let pity = 0
     let rarity = ''
+    let output = ''
 
     if (game == 'FGO') {
         chance = 100
@@ -25,15 +31,18 @@ const gachaRoll = (game) => {
         rollCount++
         c = Math.floor(Math.random() * chance + 1)
         if (c == 1) {
-            return `It took ${rollCount} rolls to get a ${rarity} in ${game}`
+            output = `It took ${rollCount} rolls to get a ${rarity} in ${game}`
+            break
         }
         if (rollCount == pity) {
             if (game == 'AK' && rollCount > 50) {
                 chance++
             }
-            return `You hit pity at ${pity} for your ${rarity} on ${game}`
+            output = `You hit pity at ${pity} for your ${rarity} on ${game}`
+            break
         }
     }
+    return output
 }
 
 module.exports = { gachaRoll }

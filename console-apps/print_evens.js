@@ -1,3 +1,8 @@
+/**
+ * print even numbers upto max
+ * @param {number} max 
+ * @returns {string}
+ */
 const printEvens = (max) => {
     let output = ''
     for (let i = 0; i <= max; i++) {

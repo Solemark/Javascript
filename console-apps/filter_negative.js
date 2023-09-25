@@ -1,3 +1,8 @@
+/**
+ * remove negative values from an array
+ * @param {number[]} a1 
+ * @returns {number[]}
+ */
 const filterNegative = (a1) => {
     const a2 = []
     for (let i = 0; i < a1.length; i++) {

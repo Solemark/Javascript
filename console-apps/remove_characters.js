@@ -1,3 +1,9 @@
+/**
+ * remove letters array from a string
+ * @param {string} s 
+ * @param {string[]} letters 
+ * @returns {string}
+ */
 const removeCharacters = (s, letters) => {
     for (let i = 0; i < letters.length; i++) {
         const regex = new RegExp(letters[i], 'gi')

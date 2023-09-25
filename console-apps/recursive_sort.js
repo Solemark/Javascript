@@ -1,5 +1,11 @@
 let x = 0
 let y = 0
+/**
+ * Sort array recursively
+ * @param {number[]} arr 
+ * @param {number} c 
+ * @returns {number[]}
+ */
 const sortRecursive = (arr, c) => {
     if (c >= arr.length) {
         return arr
