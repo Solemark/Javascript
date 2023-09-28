@@ -1,5 +1,7 @@
 <script></script>
 
 <template>
-    <main>Hello World</main>
+    <div>
+        Welcome to the Genshin Impact Wiki
+    </div>
 </template>

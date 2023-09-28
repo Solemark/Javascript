@@ -1,12 +1,8 @@
 <script>
-import { useRoute } from 'vue-router'
 import { cure_name } from '../components/cure_name'
 import CharacterDetails from '../components/CharacterDetails.vue'
 import CharacterDetailsAbilities from '@/components/CharacterDetailsAbilities.vue'
 export default {
-    setup() {
-        //const route = useRoute()
-    },
     data() {
         return {
             character: {
@@ -48,6 +44,11 @@ export default {
             cure_name,
         }
     },
+    methods: {
+        getCard: function (name, vision) {
+            return `https://api.genshin.dev/characters/${cure_name(name, vision)}/card`
+        }
+    },
     created() {
         fetch('https://api.genshin.dev/characters/' + this.$route.params.name)
             .then(async (res) => {
@@ -58,7 +59,7 @@ export default {
                 console.log('error:', err)
             })
     },
-    components: { CharacterDetails, CharacterDetailsAbilities },
+    components: { CharacterDetails, CharacterDetailsAbilities }
 }
 </script>
 
@@ -66,7 +67,7 @@ export default {
     <h1>{{ character.name }}</h1>
     <div class="card">
         <div class="flexbox">
-            <img :src="'https://api.genshin.dev/characters/' + cure_name(character.name, character.vision) + '/card'" />
+            <img v-bind:src="getCard(character.name, character.vision)" />
             <div class="card-body">
                 <CharacterDetails v-bind:character="character" />
             </div>

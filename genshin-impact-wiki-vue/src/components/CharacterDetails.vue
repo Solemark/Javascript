@@ -19,7 +19,7 @@ export default {
         Affiliation: {{ character.name }} <br />
         Rarity: {{ character.rarity }} star <br />
         Constellation: {{ character.constellation }} <br />
-        Birthday: {{ cure - date(character.birthday) }} <br />
+        Birthday: {{ cure_date(character.birthday) }} <br />
         {{ character.description }}
     </p>
 </template>

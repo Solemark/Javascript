@@ -1,6 +1,5 @@
 <script>
 import CharacterCard from '../components/CharacterCard.vue'
-import SearchFields from '../components/SearchFields.vue'
 export default {
     data() {
         return {
@@ -54,7 +53,7 @@ export default {
                 console.log('error:', err)
             })
     },
-    components: { CharacterCard, SearchFields },
+    components: { CharacterCard }
 }
 </script>
 

@@ -22,12 +22,12 @@ const router = createRouter({
         {
             path: '/weapons',
             name: 'weapons',
-            component: () => import('../views/WeaponView.vue'),
+            component: () => import('../views/WeaponsView.vue'),
         },
         {
             path: '/artifacts',
             name: 'artifacts',
-            component: () => import('../views/ArtifactView.vue'),
+            component: () => import('../views/ArtifactsView.vue'),
         },
     ],
 })
