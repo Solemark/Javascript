@@ -3,6 +3,7 @@ import CharacterCard from '../components/CharacterCard.vue'
 export default {
     data() {
         return {
+            display: [],
             characters: [
                 {
                     name: '',
@@ -41,6 +42,58 @@ export default {
                     ],
                 },
             ],
+            element_filter: "",
+            elements: [
+                { text: "Elements", value: "" },
+                { text: "Anemo", value: "anemo" },
+                { text: "Cryo", value: "cryo" },
+                { text: "Dendro", value: "dendro" },
+                { text: "Electro", value: "electro" },
+                { text: "Geo", value: "geo" },
+                { text: "Hydro", value: "hydro" },
+                { text: "Pyro", value: "pyro" },
+            ],
+            weapon_filter: "",
+            weapons: [
+                { text: "Weapons", value: "" },
+                { text: "Bow", value: "bow" },
+                { text: "Catalyst", value: "catalyst" },
+                { text: "Claymore", value: "claymore" },
+                { text: "Polearm", value: "polearm" },
+                { text: "Sword", value: "sword" },
+            ],
+            rarity_filter: "",
+            rarities: [
+                { text: "Rarity", value: "" },
+                { text: "5*", value: "5" },
+                { text: "4*", value: "4" },
+            ],
+        }
+    },
+    methods: {
+        filter: function () {
+            this.display = this.characters
+            if (this.element_filter != "") {
+                this.display = this.display.filter((character) => character.vision.toLowerCase() == this.element_filter)
+            }
+            if (this.weapon_filter != "") {
+                this.display = this.display.filter((character) => character.weapon.toLowerCase() == this.weapon_filter)
+            }
+            if (this.rarity_filter != "") {
+                this.display = this.display.filter((character) => character.rarity == this.rarity_filter)
+            }
+        },
+        setElementFilter: function (element) {
+            this.element_filter = element
+            this.filter()
+        },
+        setWeaponFilter: function (weapon) {
+            this.weapon_filter = weapon
+            this.filter()
+        },
+        setRarityFilter: function (rarity) {
+            this.rarity_filter = rarity
+            this.filter()
         }
     },
     created() {
@@ -48,10 +101,12 @@ export default {
             .then(async (res) => {
                 const data = await res.json()
                 this.characters = data
+                this.display = data
             })
             .catch((err) => {
                 console.log('error:', err)
             })
+        console.log("done!")
     },
     components: { CharacterCard }
 }
@@ -60,10 +115,28 @@ export default {
 <template>
     <h1>Characters</h1>
     <div class="flexbox">
-        <SearchFields />
+        <table>
+            <tr>
+                <td>
+                    <select class="form-select" v-model="element_filter" v-on:change="setElementFilter(element_filter)">
+                        <option v-for="element in elements" :value="element.value">{{ element.text }}</option>
+                    </select>
+                </td>
+                <td>
+                    <select class="form-select" v-model="weapon_filter" v-on:change="setWeaponFilter(weapon_filter)">
+                        <option v-for="weapon in weapons" :value="weapon.value">{{ weapon.text }}</option>
+                    </select>
+                </td>
+                <td>
+                    <select class="form-select" v-model="rarity_filter" v-on:change="setRarityFilter(rarity_filter)">
+                        <option v-for="rarity in rarities" :value="rarity.value">{{ rarity.text }}</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
     </div>
     <div class="flexbox">
-        <div v-for="character in characters">
+        <div v-for="character in display">
             <CharacterCard v-bind:character="character" />
         </div>
     </div>
