@@ -17,9 +17,9 @@
  * @property {string} constellation
  * @property {string} birthday
  * @property {string} description
- * @property {SubCharacter} skillTalents
- * @property {SubCharacter} PassiveTalents
- * @property {SubCharacter} constellations
+ * @property {SubCharacter[]} skillTalents
+ * @property {SubCharacter[]} PassiveTalents
+ * @property {SubCharacter[]} constellations
  * 
  * @typedef CustomSelect
  * @property {string} text
