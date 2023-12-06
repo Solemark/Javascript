@@ -1,9 +1,37 @@
 <script>
+/**
+ * @typedef SubCharacter
+ * @property {string} name
+ * @property {string} unlock
+ * @property {string} description
+ * @property {string} type
+ * 
+ * @typedef Character
+ * @property {string} name
+ * @property {string} title
+ * @property {string} vision
+ * @property {string} weapon
+ * @property {string} nation
+ * @property {string} affiliation
+ * @property {number} rarity
+ * @property {string} constellation
+ * @property {string} birthday
+ * @property {string} description
+ * @property {SubCharacter} skillTalents
+ * @property {SubCharacter} PassiveTalents
+ * @property {SubCharacter} constellations
+ * 
+ * @typedef CustomSelect
+ * @property {string} text
+ * @property {string|number} value
+ */
 import CharacterCard from '../components/CharacterCard.vue'
 export default {
     data() {
         return {
+            /** @type {Character[]} */
             display: [],
+            /** @type {Character[]} */
             characters: [
                 {
                     name: '',
@@ -43,6 +71,7 @@ export default {
                 },
             ],
             element_filter: "",
+            /** @type {CustomSelect[]} */
             elements: [
                 { text: "Elements", value: "" },
                 { text: "Anemo", value: "anemo" },
@@ -54,6 +83,7 @@ export default {
                 { text: "Pyro", value: "pyro" },
             ],
             weapon_filter: "",
+            /** @type {CustomSelect[]} */
             weapons: [
                 { text: "Weapons", value: "" },
                 { text: "Bow", value: "bow" },
@@ -63,6 +93,7 @@ export default {
                 { text: "Sword", value: "sword" },
             ],
             rarity_filter: 0,
+            /** @type {CustomSelect[]} */
             rarities: [
                 { text: "Rarity", value: 0 },
                 { text: "5*", value: 5 },
