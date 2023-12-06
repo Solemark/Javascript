@@ -71,6 +71,10 @@ export default {
         }
     },
     methods: {
+        /**
+         * filters characters based on element, weapon and rarity
+         * @returns {void}
+         */
         filter: function () {
             this.display = this.characters
             if (this.element_filter != "") {
@@ -83,14 +87,29 @@ export default {
                 this.display = this.display.filter((character) => character.rarity == this.rarity_filter)
             }
         },
+        /**
+         * sets element filter
+         * @param {string} element
+         * @returns {void} 
+         */
         setElementFilter: function (element) {
             this.element_filter = element
             this.filter()
         },
+        /**
+         * sets weapon filter
+         * @param {string} weapon
+         * @returns {void} 
+         */
         setWeaponFilter: function (weapon) {
             this.weapon_filter = weapon
             this.filter()
         },
+        /**
+         * sets rarity filter
+         * @param {string} rarity
+         * @returns {void} 
+         */
         setRarityFilter: function (rarity) {
             this.rarity_filter = rarity
             this.filter()
