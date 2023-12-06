@@ -62,11 +62,11 @@ export default {
                 { text: "Polearm", value: "polearm" },
                 { text: "Sword", value: "sword" },
             ],
-            rarity_filter: "",
+            rarity_filter: 0,
             rarities: [
-                { text: "Rarity", value: "" },
-                { text: "5*", value: "5" },
-                { text: "4*", value: "4" },
+                { text: "Rarity", value: 0 },
+                { text: "5*", value: 5 },
+                { text: "4*", value: 4 },
             ],
         }
     },
@@ -83,7 +83,7 @@ export default {
             if (this.weapon_filter != "") {
                 this.display = this.display.filter((character) => character.weapon.toLowerCase() == this.weapon_filter)
             }
-            if (this.rarity_filter != "") {
+            if (this.rarity_filter != 0) {
                 this.display = this.display.filter((character) => character.rarity == this.rarity_filter)
             }
         },
