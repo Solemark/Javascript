@@ -1,15 +1,14 @@
 /**
  * remove letters array from a string
- * @param {string} s 
+ * @param {string} str 
  * @param {string[]} letters 
  * @returns {string}
  */
-const removeCharacters = (s, letters) => {
-    for (let i = 0; i < letters.length; i++) {
-        const regex = new RegExp(letters[i], 'gi')
-        s = s.replace(regex, '')
-    }
-    return s
+const removeCharacters = (str, letters) => {
+    letters.forEach(letter => {
+        str = str.replace(new RegExp(letter, 'gi'), '')
+    })
+    return str
 }
 
 module.exports = { removeCharacters }

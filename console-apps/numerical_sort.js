@@ -1,9 +1,8 @@
 /**
  * sort params numerically
- * @param {number} a 
- * @param {number} b 
+ * @param {number} arr 
  * @returns {number}
  */
-const numericalSort = (a, b) => a.sort((a, b) => a - b)
+const numericalSort = arr => arr.sort((a, b) => a - b)
 
 module.exports = { numericalSort }
