@@ -3,7 +3,7 @@
  * @param {string} str 
  * @returns {string}
  */
-const removeSpaces = (str) => {
+const removeSpaces = str => {
     str = str.split(' ').join('')
     return str
 }

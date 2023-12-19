@@ -3,7 +3,7 @@
  * @param {string} game 
  * @returns {string}
  */
-const gachaRoll = (game) => {
+const gachaRoll = game => {
     let rollCount = 0
     let c = 0
     let chance = 0

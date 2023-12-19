@@ -3,7 +3,7 @@
  * @param {any[]} a1 
  * @returns {any[]}
  */
-const reverseArray = (a1) => {
+const reverseArray = a1 => {
     const a2 = []
     let c = a1.length - 1
     for (let i = 0; i < a1.length; i++) {
@@ -18,7 +18,7 @@ const reverseArray = (a1) => {
  * @param {any[]} a1 
  * @returns {any[]}
  */
-const reverseSingleArray = (a1) => {
+const reverseSingleArray = a1 => {
     let c = a1.length - 1
     let x = 0
     let y = 0

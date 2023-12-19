@@ -17,7 +17,7 @@ const checkTime = () => {
  * @param {Date} date 
  * @returns {string}
  */
-const getCurrentTime = (date) => {
+const getCurrentTime = date => {
     let output = ''
     if (date.getHours() > 12) {
         output += date.getHours() - 12
@@ -33,7 +33,7 @@ const getCurrentTime = (date) => {
  * @param {number} day 
  * @returns {string}
  */
-const checkDay = (day) => {
+const checkDay = day => {
     let output = ''
     switch (day) {
         case 0:

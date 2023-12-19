@@ -3,7 +3,7 @@
  * @param {string} str 
  * @returns {string}
  */
-const checkPalindrome = (str) => {
+const checkPalindrome = str => {
     let x = 0
     let y = str.length - 1
     let output = true

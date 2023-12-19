@@ -3,7 +3,7 @@
  * @param {number} max 
  * @returns {string}
  */
-const printEvens = (max) => {
+const printEvens = max => {
     let output = ''
     for (let i = 0; i <= max; i++) {
         if (i % 2 == 0) {

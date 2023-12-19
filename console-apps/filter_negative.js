@@ -3,7 +3,7 @@
  * @param {number[]} a1 
  * @returns {number[]}
  */
-const filterNegative = (a1) => {
+const filterNegative = a1 => {
     const a2 = []
     for (let i = 0; i < a1.length; i++) {
         if (a1[i] >= 0) {
